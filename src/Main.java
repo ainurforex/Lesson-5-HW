@@ -18,28 +18,24 @@ public class Main {
 
     public static void homeWork2() {
 
-        PrintMassive printMassive = new PrintMassive();
-
         Integer[] massivInt = new Integer[]{1, 2, 3};
         Double[] massivDouble = {1.57, 7.654, 9.986};
         Boolean[] massivBool = {false, false, true};
 
-        printMassive.<Integer>printMassivRight(massivInt);
-        printMassive.<Double>printMassivRight(massivDouble);
-        printMassive.<Boolean>printMassivRight(massivBool);
+        printMassivRight(massivInt);
+        printMassivRight(massivDouble);
+        printMassivRight(massivBool);
     }
 
     public static void homeWork3() {
 
-        PrintMassive printMassive = new PrintMassive();
-
         Integer[] massivInt = new Integer[]{1, 2, 3};
         Double[] massivDouble = {1.57, 7.654, 9.986};
         Boolean[] massivBool = {false, false, true};
 
-        printMassive.<Integer>printMassivLeft(massivInt);
-        printMassive.<Double>printMassivLeft(massivDouble);
-        printMassive.<Boolean>printMassivLeft(massivBool);
+        printMassivLeft(massivInt);
+        printMassivLeft(massivDouble);
+        printMassivLeft(massivBool);
 
     }
 
@@ -54,12 +50,7 @@ public class Main {
         if (massivInt[massivInt.length - 1] % 2 != 0) massivInt[massivInt.length - 1]++;
         System.out.println(massivInt[massivInt.length - 1]);
     }
-
-
-}
-class PrintMassive {
-
-    public <type> void printMassivRight(type[] arr) {
+    public static <T> void printMassivRight(T[] arr) {
 
         for (int i = 0; i < arr.length - 1; i++) {
             System.out.print(arr[i] + ",");
@@ -67,11 +58,13 @@ class PrintMassive {
         System.out.println(arr[arr.length - 1]);
     }
 
-    public <type> void printMassivLeft(type[] arr) {
+    public static <T> void printMassivLeft(T[] arr) {
 
         for (int i = arr.length - 1; i > 0; i--) {
             System.out.print(arr[i] + ",");
         }
         System.out.println(arr[0]);
     }
+
 }
+
